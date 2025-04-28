@@ -12,8 +12,32 @@
             <div th:replace="~{common :: header}"></div>
             <div class="inner_contens">
                 <div class="page_title">書籍一覧</div>
+                <div style="text-align: right;">
+                <button onclick="location.href='/mt_library/book/add'">書籍登録</button>
+             </div>
             </div>
-        </div>
+            <div class="book_list">
+            <center>
+           <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>書籍名</th>
+                <th>ISBN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book : ${bookMstList}">
+                <td>
+                    <span th:text="${book.title}"></span>
+                </td>
+                <td th:text="${book.isbn}"></td>
+            </tr>
+        </tbody>
+       </table>
+      </center>
+      </div>
+       <div th:replace="~{common :: footer}"></div>
+       </div>
     </div>
-    <div th:replace="~{common :: footer}"></div>
 </body>
+ 
